@@ -11,11 +11,11 @@ mhnUI = {
         mhnUI.page.hide(), pattern = new PatternLock(".mhn-lock", {
             margin: 15
         }), $(".mhn-lock-title").html($(".mhn-lock-title").data("title")), pattern.checkForPattern("7415369", function() {
-            $(".mhn-lock-title").html('<span class="mhn-lock-success">Yes! Bác đã mở được cái khóa của tui rồi</span>'), $(".patt-holder").addClass("patt-success"), setTimeout(function() {
+            $(".mhn-lock-title").html('<span class="mhn-lock-success">Yes! Open Successed</span>'), $(".patt-holder").addClass("patt-success"), setTimeout(function() {
                 pattern.reset(), mhnUI.message()
             }, 1e3), mhnUI.page.show()
         }, function() {
-            $(".mhn-lock-title").html('<span class="mhn-lock-failure">Sai rồi bác ơi!Nhập lại tiếp đi ik</span>'), $(".patt-holder").removeClass("patt-success"), setTimeout(function() {
+            $(".mhn-lock-title").html('<span class="mhn-lock-failure">The pattern was wrong ! Please try again</span>'), $(".patt-holder").removeClass("patt-success"), setTimeout(function() {
                 pattern.reset(), mhnUI.message()
             }, 2e3)
         })
@@ -26,8 +26,8 @@ mhnUI = {
         }, 700)
     },
     datetime: function() {
-        var t = new Array("CN", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"),
-            e = new Array("Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"),
+        var t = new Array("Sun", "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday"),
+            e = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
             n = new Date,
             i = n.getYear();
         1e3 > i && (i += 1900);
